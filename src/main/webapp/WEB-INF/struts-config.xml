@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<!DOCTYPE struts-config PUBLIC
+        "-//Apache Software Foundation//DTD Struts Configuration 1.3//EN"
+        "http://struts.apache.org/dtds/struts-config_1_3.dtd">
+
+<struts-config>
+    <form-beans>
+        <form-bean name="user" type="com.thucvu.model.User"/>
+        <form-bean name="role" type="com.thucvu.model.Role"/>
+        <form-bean name="group" type="com.thucvu.model.Group"/>
+    </form-beans>
+
+    <action-mappings>
+
+        <!--http://localhost:8080/struts-1-project/xin-chao.html-->
+        <action path="/xin-chao" type="com.thucvu.action.UserAction" name="user">
+            <forward name="success" path="/hello.jsp"/>
+        </action>
+
+        <!--http://localhost:8080/struts-1-project/hello.html-->
+        <action path="/hello" type="org.apache.struts.actions.ForwardAction" parameter="/welcome.jsp"/>
+
+        <!--http://localhost:8080/struts-1-project/role.html?method=addRole-->
+        <action path="/role" type="com.thucvu.action.RoleAction" name="role" parameter="method">
+            <forward name="addRole" path="/role/add-role.jsp"/>
+            <forward name="updateRole" path="/role/update-role.jsp"/>
+            <forward name="deleteRole" path="/role/delete-role.jsp"/>
+            <forward name="viewRole" path="/role/view-role.jsp"/>
+        </action>
+
+        <!--http://localhost:8080/struts-1-project/add-group.html-->
+        <action path="/add-group" type="com.thucvu.action.GroupAction" name="group" parameter="addGroup">
+            <forward name="addGroup" path="/group/add-group.jsp"/>
+        </action>
+
+        <!--http://localhost:8080/stuts-1-project/view-group.html-->
+        <action path="/view-group" type="com.thucvu.action.GroupAction" name="group" parameter="viewGroup">
+            <forward name="viewGroup" path="/group/view-group.jsp"/>
+        </action>
+    </action-mappings>
+    <message-resources parameter="messages"/>
+</struts-config>

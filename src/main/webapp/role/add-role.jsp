@@ -5,12 +5,13 @@
   Time: 11:09 SA
   To change this template use File | Settings | File Templates.
 --%>
-<%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ page contentType="text/html;charset=UTF-8" %>
+<!DOCTYPE>
 <html>
 <head>
     <title>Title</title>
 </head>
 <body>
-    <h1>Add User</h1>
+    <h1>Add Role</h1>
 </body>
 </html>
